@@ -9,16 +9,18 @@ import math
 #Derivatives: https://preferred.kotaksecurities.com/security/production/TradeApiInstruments_FNO_DD_MM_YYYY.txt
 # Defining the host is optional and defaults to https://tradeapi.kotaksecurities.com/apim
 # See configuration.py for a list of all supported configuration parameters.
-client = ks_api.KSTradeApi(access_token="3479cd1c-a6ea-38d1-affc-f6c64016f027", userid="PK07041983",consumer_key="6GzqJGpcypyWhfDqf24rBpRKut8a", ip="127.0.0.1", app_id="DefaultApplication",host="https://ctradeapi.kotaksecurities.com/apim")
-
 # For using sandbox environment use host as https://sbx.kotaksecurities.com/apim
 #client = ks_api.KSTradeApi(access_token="", userid="",consumer_key="", ip="127.0.0.1", app_id="", host="https://sbx.kotaksecurities.com/apim")
 
+userData= json.load(open('userDetails.json'))
+    #userid=data['userid']
+client = ks_api.KSTradeApi(userData['access_token'], userData['userid'],userData['consumer_key'], userData['ip'], userData['app_id'],userData['host'])
+    # For using sandbox environment use host as https://sbx.kotaksecurities.com/apim
+    #client = ks_api.KSTradeApi(access_token="", userid="",consumer_key="", ip="127.0.0.1", app_id="", host="https://sbx.kotaksecurities.com/apim")
 # Get session for user
-client.login(password="ANJALI@123")
-
+client.login(userData['password'])
 # Generated session token
-client.session_2fa(access_code="2551")
+client.session_2fa(userData['access_code'])
 
 # Get Report Orders
 #client.order_report()
