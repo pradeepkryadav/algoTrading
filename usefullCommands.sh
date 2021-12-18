@@ -1,3 +1,6 @@
+## unzip all file into thier folders 
+find . -name "*.zip" | while read filename; do unzip -o -d "`dirname "$filename"`" "$filename"; done;
+
 ## removing spaces in folder name 
 for directory in **; do
     if [[ -d $directory ]] && [[ -w $directory ]]; then
