@@ -1,0 +1,7 @@
+{
+  "port": 8080,
+  "enableSSL": false,
+  "sslPort": 8443,
+  "deployDir": "/Users/I320253/Desktop/Market/AlgoTrading/algo-trade-python/deploy",
+  "logFileDir": "/Users/I320253/Desktop/Market/AlgoTrading/algo-trade-python/deploy/logs"
+}

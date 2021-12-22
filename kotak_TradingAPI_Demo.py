@@ -12,7 +12,7 @@ import math
 # For using sandbox environment use host as https://sbx.kotaksecurities.com/apim
 #client = ks_api.KSTradeApi(access_token="", userid="",consumer_key="", ip="127.0.0.1", app_id="", host="https://sbx.kotaksecurities.com/apim")
 
-userData= json.load(open('userDetails.json'))
+userData= json.load(open('config/userDetails.json'))
     #userid=data['userid']
 client = ks_api.KSTradeApi(userData['access_token'], userData['userid'],userData['consumer_key'], userData['ip'], userData['app_id'],userData['host'])
     # For using sandbox environment use host as https://sbx.kotaksecurities.com/apim
